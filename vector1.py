@@ -14,11 +14,23 @@ class Vector3D:
     def __repr__(self):
         return f"{self.__class__.__name__}({self.x},{self.y},{self.z})" #self.class.name = får tak i navnet på klassen
 
-    def __add__(self,other): #må ikke kalle for self og other, men alle andre gjør det så er lurt.
-        return Vector3D(self.x + other.x, self.y + other.y, self.z + other.z)
-    
+    def __radd__(self,other): #rightadd, adder fra andre siden
+        return self.__add__(other) #denne vil kun brukes hvis __add__ ikke klarer legge til på vanlig måte. 
+
+
+    def __add__(self,other): #må ikke kalle for self og other, men alle andre gjør det så er lurt. Det finnes en helt lik metode: __sub__ som trekker fra. 
+        if  isinstance(other, (int,float)):
+            return Vector3D(self.x + other, self.y + other, self.z + other)
+        elif isinstance(other, Vector3D):
+            return Vector3D(self.x + other.x, self.y + other.y, self.z + other.z)
+        else: 
+            raise TypeError(f"Cannot add Vector3D to object of type {type(other)}")
+
     def __eq__(self, other): #metoden returnerer True hvis self == other
         return self.x == other.x and self.y == other.y and self.z == other.z
+    
+    def dot(self,other):
+        return self.x * other.x + self.y * other.y + self.z * other.z #produkt
 
     
 
