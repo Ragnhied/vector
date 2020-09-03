@@ -48,3 +48,4 @@ def test_vector_dot_product():
     w = u.dot(v)
     assert isinstance(w, (int,float)) #sjekker om w enten ble en int eller float
     assert abs(w - 6) < 1e-12
+    #assert math.isclose(w,6) #Alternativ metode til 1e-12. Da må man importere math først!
