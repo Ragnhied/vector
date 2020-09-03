@@ -6,6 +6,6 @@ def test_vector_str(): #sjekke at koden printer det vi vil den skal printe
     v = Vector3D(1,2,3)
     assert str(v) == "(1,2,3)" #str(v) printer string. Dette vi gjorde med __str__
 
-# def test_vector_repr():
-#     v = Vector3D(1,2,3)
-#     assert repr(v) == "Vector3D(1,2,3)"
+def test_vector_repr():
+     v = Vector3D(1,2,3)
+     assert repr(v) == "Vector3D(1,2,3)"

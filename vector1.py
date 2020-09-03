@@ -12,8 +12,8 @@ class Vector3D:
         return f"({self.x},{self.y},{self.z})"
     
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.x}, {self.y},{self.z})"
+        return f"{self.__class__.__name__}({self.x},{self.y},{self.z})" #self.class.name = får tak i navnet på klassen
     
 if __name__ == "__main__":
     v = Vector3D(1, 1, 1)
-    print(v)    
+    print([v])    
