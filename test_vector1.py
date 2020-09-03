@@ -2,7 +2,7 @@ import pytest
 from vector1 import Vector3D
 
 
-def test_vector_str():
+def test_vector_str(): #sjekke at koden printer det vi vil den skal printe
     v = Vector3D(1,2,3)
     assert str(v) == "(1,2,3)" #str(v) printer string. Dette vi gjorde med __str__
 
